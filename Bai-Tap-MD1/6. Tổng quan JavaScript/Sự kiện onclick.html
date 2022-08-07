@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện onclick</title>
+</head>
+<body>
+
+<p onclick="dos()">Click me</p>
+
+<p id="dem">Click</p>
+</body>
+</html>
+
+<script>
+  function dos(){
+    alert("Hello");
+  }
+
+  var dem=document.getElementById("dem");
+  dem.addEventListener("click",clickF);
+  function clickF(){
+    alert("Xin chao ban");
+  }
+</script>

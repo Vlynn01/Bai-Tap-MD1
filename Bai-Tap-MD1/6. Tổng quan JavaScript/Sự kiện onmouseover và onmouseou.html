@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sự kiện onmouseover và onmouseout</title>
+</head>
+<body>
+
+<p id="demo">Day la thu</p>
+<script>
+  var demo = document.getElementById("demo");
+  demo.addEventListener("mouseout", mouseout);
+  demo.addEventListener("mouseover",mouseover);
+
+  function mouseout() {
+    document.getElementById("demo").style.color = "yellow";
+  }
+  function mouseover(){
+    document.getElementById("demo").style.color="red";
+  }
+</script>
+</body>
+</html>

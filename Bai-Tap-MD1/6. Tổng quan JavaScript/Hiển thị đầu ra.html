@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện onclick</title>
+</head>
+<body>
+
+<!-- Hiển thị kết quả qua hàm alert-->
+<button type="button" onclick="dos()">Click me</button>
+
+<button id="dem">Click</button>
+
+<!--Hiển thị kết quả qua sử dụng thẻ html-->
+<div id="messageDiv"></div>
+<br>
+
+<button type="button" onclick="sM()">Click!</button>
+
+<!--Hiển thị kết quả qua document.wirte()-->
+<button type="button" onclick="sMg()">Click!!</button>
+
+<!--Hiển thị kết quả qua hàm console.log()-->
+<button type="button" onclick="sMgM()">Click! Click!</button>
+</body>
+</html>
+
+<script>
+  function dos(){
+    alert("Hello");
+  }
+
+  function sM(){
+    document.getElementById("messageDiv").innerHTML ="Hello";
+  }
+  var dem=document.getElementById("dem");
+  dem.addEventListener("click",clickF);
+  function clickF(){
+    alert("Xin chao ban");
+  }
+
+  function sMg(){
+    document.write("Hi!");
+  }
+
+function sMgM(){
+    console.log("Bye");
+}
+</script>
