@@ -9,38 +9,14 @@
 <body>
 <input type="number" id="num1" placeholder="Nhập số thứ nhất">
 <input type="number" id="num2" placeholder="Nhập số thứ hai">
-<button onclick = "Cong()">Cộng</button>
-<button onclick="Tru()">Trừ</button>
-<button onclick="Nhan()">Nhân</button>
-<button onclick="Chia()">Chia</button>
+<button onclick = "Cong()">+</button>
+<button onclick="Tru()">-</button>
+<button onclick="Nhan()">*</button>
+<button onclick="Chia()">/</button>
 <h3>Kết quả:</h3>
 <div id="KQ">Đây là kết quả</div>
 </body>
 </html>
-<script>
-    function Cong() {
-        var number1 = document.getElementById("num1").value;
-        var number2 = document.getElementById("num2").value;
-        var Ketqua = Number(number1) + Number(number2);
-        document.getElementById("KQ").innerHTML = Ketqua;
-    }
+<script src="Ứng%20dụng%20máy%20tính.js">
 
-    function Tru() {
-        var number1 = document.getElementById("num1").value;
-        var number2 = document.getElementById("num2").value;
-        var Ketqua = Number(number1) - Number(number2);
-        document.getElementById("KQ").innerHTML = Ketqua;
-    }
-    function Nhan() {
-        var number1 = document.getElementById("num1").value;
-        var number2 = document.getElementById("num2").value;
-        var Ketqua = Number(number1) * Number(number2);
-        document.getElementById("KQ").innerHTML = Ketqua;
-    }
-    function Chia() {
-        var number1 = document.getElementById("num1").value;
-        var number2 = document.getElementById("num2").value;
-        var Ketqua = Number(number1) / Number(number2);
-        document.getElementById("KQ").innerHTML = Ketqua;
-    }
 </script>
