@@ -1,17 +1,20 @@
-var C = 0;
+nhapC=prompt("Mời bạn nhập nhiệt độ chuyển đổi từ C sang F");
+// nhapF=prompt("Mời bạn nhập nhiệt độ chuyển đổi từ F sang C")
 
-var F = 0;
+let doC=parseInt(nhapC);
 
-var CtoF = 9 / 5 * C + 32;
+let sangDoF=parseInt(doC*9/5+32);
+// let sangDoC=parseInt((9/5)*doC+32);
+// let doF=parseInt(F);
+//
+// let sangDoC=parseInt((9/5)*C+32);
+//
 
-var FtoC = 5 / 9 *(F - 32);
+document.write("chuyển từ độ C sang độ F"  + sangDoF) ;
 
-document.write("chuyển từ độ C sang độ F"  + CtoF ) ;
-
-
-
-
-document.write("chuyển đổi từ độ F sang độC" + FtoC);
+document.write("<br>");
+//
+// document.write("chuyển đổi từ độ F sang độC" + sangDoC);
 
 
 
