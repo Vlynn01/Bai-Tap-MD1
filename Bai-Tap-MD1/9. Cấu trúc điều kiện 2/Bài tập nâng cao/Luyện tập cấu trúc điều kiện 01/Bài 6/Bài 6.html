@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</title>
+</head>
+<body>
+<script>
+  let hoahong= Number(prompt("Nhập % chiết khấu hoa hồng"))
+  let giaban= Number(prompt("Nhập giá trung bình 1 sản phẩm"))
+  let soluong=Number(prompt("Nhập số lượng sản phẩm đã bán"))
+  let tien=((giaban*soluong)*hoahong)/100
+  document.write("Bạn hương"+hoahong+"% phí và giá bán 1 sản phẩm ="+giaban+" VNĐ số lượng đã bán ="+soluong+"<br>")
+  document.write("Tổng tiền là " +(giaban*soluong)+" VNĐ <br> Số tiền bạn được hưởng là "+tien+" VNĐ")
+</script>
+</body>
+</html>

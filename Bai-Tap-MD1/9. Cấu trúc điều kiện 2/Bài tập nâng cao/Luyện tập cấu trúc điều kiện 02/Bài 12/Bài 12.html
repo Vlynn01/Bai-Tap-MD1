@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</title>
+</head>
+<body>
+<script>
+  let soTien=Number(prompt("Nhập số tiền gửi ngân hàng"))
+  let thang=Number(prompt("Nhập thời gian gửi ngân hàng theo tháng với lãi 4,1%/năm"))
+  let tienLai=0
+  let tongTienLai=tienLai
+  if(thang>1){
+    for (let i=1; i<=thang; i++){
+      tienLai=((tongTienLai+soTien)*(4.1/12))/100
+      document.write("Số tiền lãi hàng tháng " +i+ "là" +tienLai.toFixed(2)+"VND<br>")
+    }
+  }
+</script>
+</body>
+</html>

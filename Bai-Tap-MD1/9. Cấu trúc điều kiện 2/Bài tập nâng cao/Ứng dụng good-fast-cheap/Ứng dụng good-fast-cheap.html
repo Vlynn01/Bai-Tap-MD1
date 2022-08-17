@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Good, Cheap, Fast</title>
+</head>
+<body>
+<h2>Bạn muốn dự án của mình như thế nào?</h2>
+
+<input class="chuyenDoi" id="good" type="radio"/> Good <br>
+
+
+<input class="chuyenDoi" id="cheap" type="radio"/> Cheap <br>
+
+
+<input class="chuyenDoi" id="fast" type="radio"/> Fast
+
+
+</body>
+</html>
+<script>
+    const chuyenDois = document.querySelectorAll('.chuyenDoi');
+    const goodElement = document.getElementById('good');
+    const cheapElement = document.getElementById('cheap');
+    const fastElement = document.getElementById('fast');
+
+    chuyenDois.forEach((chuyenDoi) => chuyenDoi.addEventListener('change', (e) => doTheTrick(e.target)));
+
+    function doTheTrick(target) {
+        console.log(target);
+        if (goodElement.checked && cheapElement.checked && fastElement.checked) {
+            if (goodElement === target) {
+                cheapElement.checked = false;
+            }
+            if (fastElement === target) {
+                goodElement.checked = false;
+            }
+            if (cheapElement === target) {
+                fastElement.checked = false;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</title>
+</head>
+<body>
+<script>
+    let diemCacBaiKiemTra = Number(prompt("Nhập điểm trung bình của các kiểm tra"))
+    let diemGiuaKy = Number(prompt("Nhập điểm giữa kỳ"))
+    let diemCuoiKy = Number(prompt("Nhập điểm cuối kỳ"))
+    let diemTrungBinh = 0
+    diemTrungBinh = (diemCacBaiKiemTra + diemCuoiKy + diemGiuaKy) / 3
+    if (diemTrungBinh >= 9) {
+        alert("Học sinh giỏi")
+    } else if (diemTrungBinh >= 7) {
+        alert("Học sinh khá")
+    } else if (diemTrungBinh = 5) {
+        alert("Học sinh trung bình")
+    }else if(diemTrungBinh<3) {
+        alert("Học lại")
+    }else {
+        alert("Học sinh yếu")
+    }
+
+</script>
+</body>
+</html>
