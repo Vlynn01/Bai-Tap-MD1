@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3 cách định nghĩa lớp trong JavaScript</title>
+    <button onclick="suDungHam()">Sử dụng hàm</button>
+    <button onclick="suDungHamBenTrong()">Sử dụng hàm bên trong</button>
+    <button onclick="suDungObjectLiterals()">Sử dụng hàm object literals</button>
+    <button onclick="singletonSuDungMotHam()">Singleton sử dụng một hàm</button>
+</head>
+<body>
+<script>
+    function suDungHam() {
+        //1. Sử dụng hàm
+        //Khai báo lớp Apple với các thuộc tính type, color,
+        //phương thức getAppleInfo()
+        function Apple(type) {
+            this.type = type;
+            this.color = "red";
+            this.getInfo = getAppleInfo;
+        }
+
+        //Khai báo hàm getAppleInfo()
+        //Khuyến nghị: đây là cách không nên dùng,
+        //đọc tiếp sẽ rõ
+        function getAppleInfo() {
+            return this.color + ' ' + this.type + ' apple';
+        }
+
+        let apple = new Apple('macintosh');
+        apple.color = "reddish";
+        alert(apple.getInfo());
+    }
+
+    function suDungHamBenTrong() {
+        //1.1 Sử dụng hàm bên trong
+        function Apple(type) {
+            this.type = type;
+            this.color = "red";
+            this.getInfo = function () {
+                return this.color + ' ' + this.type + ' apple';
+            };
+        }
+
+        //Sử dụng cách này không làm thay đổi cách bạn khởi tạo đối tượng và sử dụng những thuộc tính hoặc phương thức của nó.
+    }
+
+
+    //1.2 Khai báo hàm bằng thuộc tính prototype
+    function Apple(type) {
+        this.type = type;
+        this.color = "red";
+    }
+
+    Apple.prototype.getInfo = function () {
+        return this.color + ' ' + this.type + ' apple';
+    };
+    //Một lần nữa bạn có thể sử dụng đối tượng mới như trong phần 1. và 1.1
+
+    //2. Sử dụng object literals
+    let apple = {
+        type: "macintosh",
+        color: "red",
+        getInfo: function () {
+            return this.color + ' ' + this.type + ' apple';
+        }
+    }
+
+    //Với cách này, bạn không cần (và không thể) khởi tạo đối tượng của lớp vì đơn giản là nó đã tồn tại. Vì vậy bạn chỉ cần bắt đầu sử dụng đối tượng này thôi.
+    function suDungObjectLiterals() {
+        let apple = {
+            type: "macintosh",
+            color: "red",
+            getInfo: function () {
+                return this.color + ' ' + this.type + ' apple';
+            }
+        }
+        apple.color = "reddish";
+        alert(apple.getInfo());
+    }
+    //3. Singleton sử dụng một hàm
+    //Cách thứ ba được trình bày trong bài viết này là sự kết hợp của hai cách trên mà bạn đã thấy. Bạn có thể sử dụng một hàm để xác định một đối tượng singleton. Đây là cú pháp:
+    function singletonSuDungMotHam(){
+        let apple = new function() {
+            this.type = "macintosh";
+            this.color = "red";
+            this.getInfo = function () {
+                return this.color + ' ' + this.type + ' apple';
+            };
+        }
+        apple.color = "reddish";
+        alert(apple.getInfo());
+    }
+    //Cách này có vẻ giống với 1.1 mô tả ở trên, nhưng cách để sử dụng đối tượng thì lại giống cách 2.
+    //Vậy new function(){...} thực hiện 2 điều sau cùng một lúc: định nghĩa một hàm (một hàm tạo không tên) và gọi nó thông qua từ khóa new. Với cách này, có thể gây ra cho bạn chút nhầm lẫn bởi nó không quá phổ biến, nhưng đây là một lựa chọn khi bạn thật sự muốn có một hàm khởi tạo mà bạn sẽ chỉ sử dụng một lần duy nhất và không cần thiết phải khai báo tên cho nó.
+</script>
+</body>
+</html>

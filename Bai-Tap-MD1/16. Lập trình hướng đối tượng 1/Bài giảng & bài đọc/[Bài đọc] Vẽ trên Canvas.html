@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ trên Canvas</title>
+</head>
+<body id="test" onload="drawShape();">
+</br></br>
+<canvas id="mycanvas"></canvas>
+<canvas height="100" id="duongThang" style="border:1px solid #d3d3d3;" width="200">
+</canvas>
+<canvas height="100" id="duongTron" style="border:1px solid #d3d3d3;" width="200">
+</canvas>
+<canvas height="100" id="veChu1" style="border:1px solid #d3d3d3;" width="200">
+</canvas>
+<canvas height="100" id="veChu2" style="border:1px solid #d3d3d3;" width="200">
+</canvas>
+<canvas height="100" id="hieuUngGradient" style="border:1px solid #d3d3d3;" width="200">
+</canvas>
+<canvas height="100" id="hieuUngGradientTron" style="border:1px solid #d3d3d3;" width="200">
+
+    <style>
+        #test
+        {
+            width: 100px;
+            height:100px;
+            margin: 0px auto;
+        }
+    </style>
+</canvas>
+<script>
+
+    //Canvas là gì?
+    //Thẻ <canvas> trong HTML được sử dụng để vẽ các hình ảnh trong trang web
+
+
+    //Vẽ đường thẳng
+    var c = document.getElementById("duongThang");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+
+    //Vẽ đường tròn
+    var c = document.getElementById("duongTron");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    //Vẽ chữ cách 1
+    var c = document.getElementById("veChu1");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.fillText("Hello Luận", 10, 50);
+    //Vẽ chữ cách 2
+    var c = document.getElementById("veChu2");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.strokeText("Hi Luận", 10, 50);
+
+    //Hiệu ứng Gradient
+    var c = document.getElementById("hieuUngGradient");
+    var ctx = c.getContext("2d");
+
+    // Tạo gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+
+    // Tô với gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10, 10, 150, 80);
+
+    //Hiệu ứng gradient tròn
+    var c = document.getElementById("hieuUngGradientTron");
+    var ctx = c.getContext("2d");
+
+    // Tạo gradient
+    var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+
+    // Tô với gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10, 10, 150, 80);
+
+    function drawShape(){
+
+        // get the canvas element using the DOM
+        var canvas = document.getElementById('mycanvas');
+
+        // use getContext to use the canvas for drawing
+        var ctx = canvas.getContext('2d');
+
+        // Create a pattern
+        for (var i=0;i<7;i++)
+        {
+
+            for (var j=0;j<7;j++)
+            {
+                ctx.fillStyle='rgb(' + Math.floor(255-20.5*i)+ ','+ Math.floor(255 - 42.5*j) + ',255)';
+                ctx.fillRect( j*25, i* 25, 55, 55 );
+            }
+        }
+    }
+</script>
+
+
+</body>
+</html>

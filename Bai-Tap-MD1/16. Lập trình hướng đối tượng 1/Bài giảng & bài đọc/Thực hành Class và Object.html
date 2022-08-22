@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành Class và Object</title>
+    <button onclick="Class()">Class</button>
+    <button onclick="Object()">Object</button>
+</head>
+<body>
+<script>
+    function Class() {
+        //sử dụng class để khởi tạo đối tượng
+        function hocSinh(id, ten, diaChi) {
+            //đối tượng và thông tin của đối tượng
+            this.id = id;
+            this.ten = ten;
+            this.diaChi = diaChi;
+            this.nhanThongTin = function () {
+                //phương thức nhanThongTin()
+                //trả về thông tin của đối tượng
+                return "Id= " + this.id + "Tên= " + this.ten + "Địa chỉ= " + this.diaChi;
+            }
+        }
+
+        let hS = new hocSinh(100, "Luận ", "Hải Phòng ");
+        //khởi tạo đối tượng
+        console.log(hS.nhanThongTin());
+        //hiển thị thực thi đối tượng
+    }
+
+    function Object() {
+        //sử dụng Object để khởi tạo đối tượng
+        let hocSinh = {
+            //định nghĩa đối tượng hocSinh với các thuộc tính id, ten, diaChi
+            // gán giá trị cho các thuộc tính
+            id: 10,
+            ten: "Văn Luận",
+            diaChi: "Hải Phòng",
+            nhanThongTin: function () {
+                //định nghĩa phương thức nhanThongTin trả về thông tin của đối tượng
+                return "Id= " + this.id + "Tên= " + this.ten + "Địa chỉ= " + this.diaChi;
+            }
+        }
+        console.log(hocSinh.ten);
+        //gọi thuộc tính và phương thức thông qua đối tượng hocSinh
+        console.log(hocSinh.nhanThongTin());
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Căn bản về đối tượng trong JavaScript</title>
+</head>
+<body>
+<script>
+    let person = {};
+    // Vừa tạo một đối tượng
+    name: ['Bob', 'Smith'],
+        age
+    :
+    32,
+        gender
+    :
+    'male',
+        interests
+    :
+    ['music', 'skiing'],
+        //dữ liệu của đối tượng
+        bio
+    :
+
+    function () {
+        //chức năng của đối tượng
+        alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+    }
+
+    ,
+    greeting: function () {
+        //chức năng của đối tượng
+        alert('Hi! I\'m ' + this.name[0] + '.');
+    }
+    }
+    ;
+    person.bio();
+    //thành phần của đối tượng
+
+    let objectName = {
+        member1Name: member1Value,
+        member2Name: member2Value,
+        member3Name: member3Value
+    }
+    //Một đối tượng được tạo ra từ nhiều thành phần, mỗi thành phần đều có tên và giá trị
+    //Mỗi cặp tên/giá trị phải phân tách nhau bởi một dấu phẩy, và cặp tên/giá trị phân cách bởi dấu hai chấm (":")
+
+
+    //Ký hiệu chấm (dấu ".")
+    objectName.propertyName;
+    objectName.methodName;
+    //Truy xuất thuộc tính và phương thức của đối tượng:
+
+    //Sub-namespaces (không gian tên phụ)
+    //Bạn có thể khởi tạo giá trị cho một thành phần của một đối tượng khác. Ví dụ, thử thay đổi tên thành phần của đối tượng từ
+
+    name: ['Bob', 'Smith'],
+
+        thành
+    :
+
+    name : {
+        first: 'Bob',
+            last
+    :
+        'Smith'
+    }
+    ,
+    //Để làm việc này chúng ta tạo ra một sub-namespace (không gian tên phụ). Điều này nghe có vẻ phức tạp, nhưng thực tế không như vậy - để truy xuất các thành phần đó bạn chỉ cần bổ sung thêm một dấu chấm (".") sau đó
+
+    person.name.first
+    person.name.last
+
+    //Lưu ý: Với việc này bạn cần thay đổi mã trong phương thức của đối tượng person, tất cả những chỗ đang viết là
+
+    name[0]
+    name[1]
+
+    được
+    thay
+    bằng
+    name.first
+    name.last
+    //Nếu không phương thức của đối tượng sẽ không hoạt động được nữa.
+
+    //Cặp ngoặc vuông ("[]")
+    //Để truy xuất các thuộc tính của đối tượng bạn có thể dụng cặp ngoặc vuông ("[]") thay cho dấu chấm ("."):
+
+    person.age
+    person.name.first
+
+    //Bạn có thể dùng
+
+    person['age']
+    person['name']['first']
+
+    //Thiết lập các thành phần của đối tượng
+
+
+
+</script>
+</body>
+</html>
